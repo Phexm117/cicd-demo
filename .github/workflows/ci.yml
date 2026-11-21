@@ -1,0 +1,30 @@
+
+name: CI Pipeline
+
+# Trigger เมื่อมีการ Push Code
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. ดาวน์โหลด Source Code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. แสดงข้อความ
+      - name: Build
+        run: echo "Building project..."
+
+      # 3. ทดสอบระบบ
+      - name: Test
+        run: echo "Testing project..."
+
+      # 4. ตรวจสอบผล
+      - name: Complete
+        run: echo "CI Pipeline completed!"
